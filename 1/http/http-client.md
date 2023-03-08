@@ -73,6 +73,9 @@ String message = """
 	""";
 ```
 
+> 해당 문법은 java text blocks를 검색하면 나온다.\
+>
+
 또는
 
 ```java
@@ -82,7 +85,7 @@ String message = "" +
 	"\\n";
 ```
 
-소켓에서 Output Stream을 얻어서 쓸 수 있다.
+소켓에서 Output Stream을 얻어서 쓸 수 있다. (Byte Array로 전송해야한다.)
 
 ```java
 OutputStream outputStream = socket.getOutputStream();
@@ -124,7 +127,8 @@ String text = new String(data);
 System.out.println(text);
 ```
 
-요청과 마찬가지로 Reader를 쓰면 훨씬 편하다(추천).
+요청과 마찬가지로 Reader를 쓰면 훨씬 편하다(추천).\
+읽어와서 사이즈만큼 자르지 않아도 된다. CharBuffer가알아서 해준다.
 
 ```java
 InputStreamReader reader = new InputStreamReader(socket.getInputStream());
@@ -137,6 +141,8 @@ charBuffer.flip();
 
 System.out.println(charBuffer.toString());
 ```
+
+reader.read() 할 때, charBuffer에 write를 했는데 toString을 하기 위해 다시 또 charBuffer에서 읽어와야한다. 그래서 flip()을 써야한다??
 
 > <mark style="background-color:orange;">**CharBuffer에서 읽기 전에 flip을 잊지 않아야 한다.**</mark>
 
