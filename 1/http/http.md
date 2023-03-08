@@ -167,9 +167,9 @@ ex) 몇 초 동안 유지
 1. 기본적으로는 사람이 읽을 수 있는 형태
 2. 요청과 응답 모두 동일 구조
    1. Start line → 요청과 응답의 형태가 다름.
-   2. Headers
+   2. Headers -> HTTP 전송에 필요한 모든 부가정보 ex) Content-Length
    3. 빈 줄
-   4. Body
+   4. Body : 실제 전송할 데이터 (Byte로 표현 가능한 모든 데이터 전송 가능)
       1. 크기를 알기 어렵다. Headers의 Content-Length 항목 등을 활용한다.
       2. 위와 다르게 꼭 사람이 읽을 수 있는 텍스트 형태일 필요는 없다. 바이너리 등 가능.
       3. 하나가 아니라 여럿일 수도 있다. 파일 업로드 등을 위해 쓰이는 multipart/form-data가 대표적.
@@ -183,6 +183,14 @@ ex) 몇 초 동안 유지
 5. PATCH → Update (partial) (멱등성X)
 6. DELETE → Delete
 7. OPTIONS → 지원 확인
+
+{% hint style="info" %}
+**멱등성 :** 한 번 호출하던 두 번 호출하던 100번 호출하던 결과가 똑같다
+
+**GET, PUT, DELETE : 멱등**
+
+**POST : 멱등 X  ex) 회원가입 요청 여러번하면 회원 여러명된다**&#x20;
+{% endhint %}
 
 ## [HTTP Status Code](https://developer.mozilla.org/ko/docs/Web/HTTP/Status) (응답)
 
