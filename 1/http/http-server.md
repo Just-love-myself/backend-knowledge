@@ -37,6 +37,8 @@ Socket socket = listener.accept();
 
 I/O에서 이렇게 기다리는 걸 Blocking이라고 한다. 파일 읽기, 쓰기 등도 모두 Blocking 동작이지만, TCP 통신에서는 네트워크 상태 같은 요인에 의해 크게 지연될 수 있고, accept처럼 상대방의 요청이 없으면 영원히 기다리는 일이 벌어질 수 있다. 멀티스레드나 비동기, 이벤트 기반 처리 등이 필요한 이유다.
 
+> **Blocking** : &#x20;
+
 ## 2. Request
 
 서버는 요청을 하는 게 아니라, 요청을 받는다. 따라서 먼저 읽어야 한다.
@@ -55,9 +57,21 @@ charBuffer.flip();
 System.out.println(charBuffer.toString());
 ```
 
+> 하지만 이 코드는 모든 요청을그대로 받기 때문에 localhost:8080 이던, localhost:8080/member이던다 똑같이 응답해주게 되어있다.
+>
+> CharBuffer에서 start-line을 따서 HTTP 메서드도 알고, path도 알 수 있다. 이를 바탕으로 케이스에 맞게 응답처리를 해주는 것이다.
+>
+> charBuffer.toString().split('\n') -> start-line 따기
+>
+> 하지만 이 방법은 너무 복잡함. 좀 더 쉽게 할 수 있는 방법이 있다.
+>
+> 다음시간에  Java HTTP Server를 이용해서 쉽게 HTTP 서버를 만들어보자
+
 ## 3. Response
 
 클라이언트의 요청과 마찬가지로, 응답 메시지를 만들어서 전송하면 된다.
+
+ex) HTTP 버전 맞추기
 
 ```
 HTTP/1.1 200 OK
@@ -87,6 +101,8 @@ String message = "" +
 ⚠️ 마지막 줄에 Newline(\n)을 넣는 걸 잊지 말자.
 
 제대로 하려면 Content-Type과 Content-Length를 더해주는 게 좋다.
+
+메시지 바디에 html 태그를 넣으면 페이지가 뜨는 것이다.
 
 ```java
 String body = "Hello, world!";
