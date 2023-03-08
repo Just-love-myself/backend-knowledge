@@ -24,15 +24,11 @@ IP 프로토콜만 사용했을 경우엔,
 
 따라서 TCP 세그먼트에 추가 정보들(출발지 port, 도착지 port, 전송제어, 순서, 검증 등)을 추가해서 같이 보내는 것이다.
 
-{% hint style="info" %}
-**Port** : 같은 IP 내에서 프로세스 구분할 때 쓰인다.
-{% endhint %}
+> **Port** : 같은 IP 내에서 프로세스 구분할 때 쓰인다.
 
-{% hint style="info" %}
-IP는 변경될 수 있다. 따라서 DNS(Domain Name System)을 이용한다.&#x20;
-
-일종의 **전화번호부**처럼 도메인 명을 IP주소로 변환해준다.
-{% endhint %}
+> IP는 변경될 수 있다. 따라서 DNS(Domain Name System)을 이용한다.&#x20;
+>
+> 일종의 **전화번호부**처럼 도메인 명을 IP주소로 변환해준다.
 
 ## TCP 특징
 
@@ -79,11 +75,7 @@ Java에서는 키보드 입력, 화면 출력, 파일 입출력 등과 마찬가
 
 HTTP는 HTML 문서와 같은 리소스(이미지, 영상, 파일)들을 가져올 수 있도록 해주는 프로토콜이다.
 
-{% hint style="info" %}
-#### 프로토콜 : 규칙의 집합, 규약, 약속
-{% endhint %}
-
-
+> #### 프로토콜 : 규칙의 집합, 규약, 약속
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>OSI 7 계층 &#x26; TCP/IP 프로토콜</p></figcaption></figure>
 
@@ -105,34 +97,32 @@ OSI 7 계층 중  2, 3, 4, 7계층만 살펴보자.\
 2. 클라이언트 -> 요청
 3. 서버 -> (처리 후)응답
 
-{% hint style="info" %}
-URL 문법
-
-scheme://\[userinfo@]host\[:port]\[/path]\[?query]\[#fragment]
-
-* **sheme**\
-  주로 프로토콜 사용 ex) http, https
-* **userinfo**\
-  ****URL에 사용자 정보 포함해서 인증\
-  거의 사용하지 않음
-* **host**\
-  호스트명\
-  도메인명 또는 IP 주소를 직접 사용가능
-* **port**\
-  접속 포트\
-  일반적으로 생략, http는 80, https는 443 사용
-* **path**\
-  리소스 경로, 계층적 구조\
-  ex) /members\
-  /members/100
-* **query**\
-  key=value 형태\
-  ?로 시작, &로 추가 가능\
-  query string으로도 불림
-* **fragment**\
-  http 내부 북마크 등에 사용\
-  서버에 전송하는 정보 아님
-{% endhint %}
+> URL 문법
+>
+> scheme://\[userinfo@]host\[:port]\[/path]\[?query]\[#fragment]
+>
+> * **sheme**\
+>   주로 프로토콜 사용 ex) http, https
+> * **userinfo**\
+>   ****URL에 사용자 정보 포함해서 인증\
+>   거의 사용하지 않음
+> * **host**\
+>   호스트명\
+>   도메인명 또는 IP 주소를 직접 사용가능
+> * **port**\
+>   접속 포트\
+>   일반적으로 생략, http는 80, https는 443 사용
+> * **path**\
+>   리소스 경로, 계층적 구조\
+>   ex) /members\
+>   /members/100
+> * **query**\
+>   key=value 형태\
+>   ?로 시작, &로 추가 가능\
+>   query string으로도 불림
+> * **fragment**\
+>   http 내부 북마크 등에 사용\
+>   서버에 전송하는 정보 아님
 
 ## Stateless Protocol
 
@@ -143,12 +133,10 @@ scheme://\[userinfo@]host\[:port]\[/path]\[?query]\[#fragment]
    * 데이터는 서버에서 관리하고 쿠키 등으로 key를 관리하는 세션
    * 웹 브라우저의 기능(local storage 등)
 
-{% hint style="info" %}
-Stateless란 특징이 갖는 장점은, \
-갑자기 Client 요청이증가해도 서버를 대거 투입할 수 있다.\
-또한, 응답서버를 쉽게 바꿀 수 있다.\
-따라서 무한한 서버 증설이 가능케 한다.
-{% endhint %}
+> Stateless란 특징이 갖는 장점은, \
+> 갑자기 Client 요청이증가해도 서버를 대거 투입할 수 있다.\
+> 또한, 응답서버를 쉽게 바꿀 수 있다.\
+> 따라서 무한한 서버 증설이 가능케 한다.
 
 ## 비연결성
 
@@ -189,13 +177,11 @@ ex) 몇 초 동안 유지
 6. DELETE → Delete
 7. OPTIONS → 지원 확인
 
-{% hint style="info" %}
-**멱등성 :** 한 번 호출하던 두 번 호출하던 100번 호출하던 결과가 똑같다
-
-**GET, PUT, DELETE : 멱등**
-
-**POST : 멱등 X  ex) 회원가입 요청 여러번하면 회원 여러명된다**&#x20;
-{% endhint %}
+> **멱등성 :** 한 번 호출하던 두 번 호출하던 100번 호출하던 결과가 똑같다
+>
+> **GET, PUT, DELETE : 멱등**
+>
+> **POST : 멱등 X  ex) 회원가입 요청 여러번하면 회원 여러명된다**&#x20;
 
 ## [HTTP Status Code](https://developer.mozilla.org/ko/docs/Web/HTTP/Status) (응답)
 
