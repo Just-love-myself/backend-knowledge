@@ -14,9 +14,11 @@ start.spring.io 사이트에서 프로젝트 만들면 된다.
 
 ### Web Server와 Web Application Server(WAS)
 
+아직 공부 못 함.. :cry:
+
 ### MVC 아키텍처 패턴
 
-[https://engkimbs.tistory.com/686](https://engkimbs.tistory.com/686) 참고
+[https://medium.com/@jang.wangsu/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4-mvc-%ED%8C%A8%ED%84%B4%EC%9D%B4%EB%9E%80-1d74fac6e256](https://medium.com/@jang.wangsu/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4-mvc-%ED%8C%A8%ED%84%B4%EC%9D%B4%EB%9E%80-1d74fac6e256) - MVC 아키텍처
 
 **MVC**는 Model-View-Controller 의 약자다.
 
@@ -32,6 +34,8 @@ start.spring.io 사이트에서 프로젝트 만들면 된다.
 * **View**는 화면에 “**무엇”** 인가를 **보여주기 위한 역할**.&#x20;
 
 ### Spring MVC
+
+[https://engkimbs.tistory.com/686](https://engkimbs.tistory.com/686) - Spring MVC
 
 웹 프로그래밍을 구축할 때의 설계 모델은 Model1, Model2 크게 2가지가 있다.
 
@@ -64,7 +68,7 @@ Annotation은 클래스와 메서드에 추가하여 다양한 기능을 부여�
 
 ### Spring Annotation
 
-@RestController : @Controller + @ResponseBody가 합쳐진 것.
+**@RestController** : @Controller + @ResponseBody가 합쳐진 것.
 
 @Controller만 붙어있다면, "/hello"라는 path로 요청이 들어왔을 때,&#x20;
 
@@ -93,7 +97,7 @@ public class HelloController{
 
 
 
-@GetMapping
+**@GetMapping**
 
 특정 url로부터 요청을 받으면 어떤 Controller에서 처리할 지 알아야 한다.\
 이 때, 특정 url을 요청을 수행할 Controller과 매핑하여 지정하는 어노테이션이 **@RequestMapping**이다.
