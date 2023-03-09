@@ -65,7 +65,7 @@ System.out.println(charBuffer.toString());
 >
 > 하지만 이 방법은 너무 복잡함. 좀 더 쉽게 할 수 있는 방법이 있다.
 >
-> 다음시간에  Java HTTP Server를 이용해서 쉽게 HTTP 서버를 만들어보자
+> 다음시간에  **Java HTTP Server**를 이용해서 쉽게 **HTTP 서버**를 만들어보자
 
 ## 3. Response
 
