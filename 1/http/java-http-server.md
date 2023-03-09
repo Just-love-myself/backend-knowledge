@@ -156,6 +156,10 @@ String body = new String(inputStream.readAllBytes());
 System.out.println(body);
 ```
 
+Request HTTP 메시지 파싱 예시
+
+<figure><img src="../../.gitbook/assets/server Request 정보 출력2.PNG" alt=""><figcaption></figcaption></figure>
+
 ### 5. Response
 
 데이터를 Byte 배열로 준비.\
