@@ -10,8 +10,8 @@ HTTP가 어떠한 원리로 동작하는지 알아보자.
 
 ## 목차
 
-* HTTP의 이해
-* HTTP Client
-* HTTP Server
-* Java HTTP Server
-* Spring Web Mvc
+* [http.md](http.md "mention")
+* [http-client.md](http-client.md "mention")
+* [http-server.md](http-server.md "mention")
+* [java-http-server.md](java-http-server.md "mention")
+* [spring-web-mvc.md](spring-web-mvc.md "mention")
