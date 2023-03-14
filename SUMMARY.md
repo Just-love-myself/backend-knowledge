@@ -11,3 +11,11 @@
   * [HTTP Server](1/http/http-server.md)
   * [Java Http Server](1/http/java-http-server.md)
   * [Spring Web MVC](1/http/spring-web-mvc.md)
+
+## 2주차
+
+* [REST API ](2/rest-api/README.md)
+  * [REST API](2/rest-api/rest-api.md)
+  * [URI & MIME type](2/rest-api/uri-and-mime-type.md)
+  * [Collection Patterns](2/rest-api/collection-patterns.md)
+  * [Spring Web MVC로 구현](2/rest-api/spring-web-mvc.md)
