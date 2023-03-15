@@ -1,3 +1,7 @@
+---
+description: URI와 MIME type(=Media type, Content type)에 대해서 알아보자
+---
+
 # URI & MIME type
 
 ## [URI](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics\_of\_HTTP/Identifying\_resources\_on\_the\_Web) (Uniform Resource Identifier)

@@ -8,3 +8,13 @@ description: REST API에 대해서 알아보자
 
 엄격하게 REST를 적용하긴 어렵지만 REST API의 핵심적인 부분을 이해하고, REST에 대해 제대로 정리해보는 시간을 가져보자.
 
+## 목차
+
+[rest-api.md](rest-api.md "mention")
+
+[uri-and-mime-type.md](uri-and-mime-type.md "mention")
+
+[collection-patterns.md](collection-patterns.md "mention")
+
+[spring-web-mvc.md](../../1/http/spring-web-mvc.md "mention")
+
