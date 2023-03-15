@@ -1,6 +1,6 @@
 # URI & MIME type
 
-## URI
+## [URI](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics\_of\_HTTP/Identifying\_resources\_on\_the\_Web) (Uniform Resource Identifier)
 
 **리소스**를 식별하는 방법.
 
@@ -101,5 +101,24 @@ URN 쓰는 걸 거의 본 적이 없음. \
 
 목차에 있는 소제목을 누르면 해당 문단으로 스크롤되는 경험이 프래그먼트 때문이다.
 
-## MIME type
+## [MIME Type](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics\_of\_HTTP/MIME\_types)
+
+Content의 종류를 표현.
+
+Content Type, Media Type과 같은 뜻이다.
+
+`<type>/<subtype>`의 형태로 쓴다.
+
+MIME 타입은 대소문자를 구분하지는 않지만 전통적으로 소문자로 쓰여진다.
+
+HTTP Headers에 `Content-Type` 속성으로 전달함. [IANA](https://www.iana.org/assignments/media-types/media-types.xhtml)에 등록된 목록을 참고하자.
+
+1. `text/plain` ⇒ E-mail에서 자주 사용.
+2. `text/html` ⇒ 일반적인 웹 문서. HTML 문서.
+3. `text/css`
+4. `text/javascript`
+5. `application/xml` ⇒ 범용. **자기서술적(Self-descriptive)**이기 상대적으로 어렵다.
+6. `application/atom+xml`
+7. `application/json` ⇒ 범용. 자기서술적이기 굉장히 어렵다.
+8. `application/dns+json`
 
