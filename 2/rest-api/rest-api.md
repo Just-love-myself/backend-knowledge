@@ -155,4 +155,40 @@ JSON은 하이버링크가 정의되어 있지 않고, Self-descriptive의 경�
 
 ## **Resources** 와 Representations
 
+**HTTP에서의 representation**
+
+GET 메서드의 정의는 다음과 같다.\
+**target resource에 대한 현재의 선택된 representation 하나를 반환한다**
+
+****
+
+GET 요청을 서버에 보낸 상황을 보자
+
+```
+GET https://example.org/greeting
+Host: example.org
+Accept: text/plain, text/html; q=0.9 *; q=0.1
+Accept-Language: en, ko; q=0.9, *; q=0.1
+
+```
+
+“hello”라는 메시지를 응답으로 받았다고 해 보자.
+
+```
+HTTP/1.1 200 OK
+Content-Length: 6
+Date: Sun, 19 Mar 2017 10:20:47 GMT
+Last-Modified: Sun, 19 Mar 2017 08:00:00 GMT
+Content-Type: text/plain
+Content-Language: en
+
+hello
+```
+
+* “target resource”란 https://example.org/greeting 라는 uri가 가리키는 리소스이다
+* 하나의 representation은 **representation data**와 **representation metadata**로 구성된다.
+* 위의 예에서는 “hello”가 representation data이고, “Content-Type: text/plain”과 “Content-Language: en”이 representation metadata이다.
+* representation은 사실 상 HTTP 메시지이다.
+* 성숙한 REST라면 representation에 하이퍼미디어 컨트롤이 포함되어야한다는 것
+
 ****
