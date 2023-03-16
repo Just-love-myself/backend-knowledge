@@ -51,7 +51,7 @@ URI라는 고유 식별자를 사용하여 자원을 식별한다
 
 b. **manipulation of resources through representations**
 
-* 클라이언트가 자원을 요청할 때 서버는 **자원 자체가 아닌 자원의 표현(representation)으로 응답**한다.
+* 클라이언트가 자원을 요청할 때 서버는 **자원 자체(resource)가 아닌 자원의 표현(representation)으로 응답**한다.
 * 자원의 표현(representation)은 현재 자원의 상태를 반영하는 정보이며, 이는 클라이언트가 이해하고 조작할 수 있는 형식이다.
   * 대표적인 예로 HTML, JSON, XML 등이 있다.
 * 클라이언트가 특정 표현 형식을 요청하고 서버가 요청에 맞는 표현을 제공하는 것을 컨텐츠 협상(content negotiation)이라고 한다.
