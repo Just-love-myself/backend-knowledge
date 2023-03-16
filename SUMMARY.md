@@ -15,6 +15,7 @@
 ## 2주차
 
 * [REST API ](2/rest-api/README.md)
+  * [API](2/rest-api/api.md)
   * [REST API](2/rest-api/rest-api.md)
   * [URI & MIME type](2/rest-api/uri-and-mime-type.md)
   * [Collection Patterns](2/rest-api/collection-patterns.md)
