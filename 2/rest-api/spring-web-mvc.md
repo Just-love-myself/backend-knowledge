@@ -1,5 +1,7 @@
 # Spring Web MVC로 구현
 
+## Spring  Web MVC Annotation
+
 * **@RequestMapping**
 
 URL 을 컨트롤러의 메서드와 매핑할 때 사용하는 어노테이션
@@ -46,7 +48,7 @@ public @interface GetMapping {}
 
 * **@PathVariable**
 
-### 사용법
+**사용법**
 
 Controller에서 아래와 같이 작성하면 간단하게 사용 가능하다.
 
@@ -72,7 +74,34 @@ public class MemberController {
 }
 ```
 
-**@RequestParam과의 차이점**&#x20;
+* **@RequestParam**&#x20;
+
+URI의 queryString을 받기에 적절한 애노테이션
+
+required란 속성을 쓸 수 있다.
+
+required = false -> query String에 파라미터가 없어도 된다는 뜻
+
+```java
+@RestController
+public class MemberController { 
+    // 기본
+    //URI 예시 http://localhost:8080/member?name=김도균
+    @GetMapping("/member")
+    public String findByName(@RequestParam(value = "name") String name ) {
+        return "Name: " + name;
+    }
+    
+    // 여러 개
+    //URI 예시 http://localhost:8080/member?name=김도균&age=24
+    @GetMapping("/member/{id}/{name}")
+	public String findByNameAndId(@RequestParam(value = "name)" String name,
+	 @RequestParam(value = "age" int age) {
+    	return "ID: " + id + ", name: " + name;
+    }
+    
+}
+```
 
 * **@RequestBody**
 
@@ -110,4 +139,12 @@ value 설정을 통하여 어떤 예외를 잡을지 설정할 수 있다.&#x20;
 * **@ResponseStatus**&#x20;
 
 응답 상태코드를 정해주는 애노테이션이다.
+
+
+
+## Path Parameter와 Query String
+
+path parameter와 query string이 무엇인지 알아보고, 둘의 차이점을 알아보자.
+
+
 
