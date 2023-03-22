@@ -20,3 +20,10 @@
   * [URI & MIME type](2/rest-api/uri-and-mime-type.md)
   * [Collection Patterns](2/rest-api/collection-patterns.md)
   * [Spring Web MVC로 구현](2/rest-api/spring-web-mvc.md)
+
+## 3주차
+
+* [DTO](3/dto.md)
+* [직렬화](3/undefined.md)
+* [Jackson ObjectMapper](3/jackson-objectmapper.md)
+* [CORS](3/cors.md)
