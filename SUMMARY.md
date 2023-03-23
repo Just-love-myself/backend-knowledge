@@ -24,6 +24,6 @@
 ## 3주차
 
 * [DTO](3/dto.md)
-* [직렬화(Serialization)](3/serialization.md)
+* [직렬화(Serialization)](3/undefined.md)
 * [Jackson ObjectMapper](3/jackson-objectmapper.md)
 * [CORS](3/cors.md)
