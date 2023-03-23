@@ -102,7 +102,7 @@ OSI 7 계층 중  2, 3, 4, 7계층만 살펴보자.\
 > scheme://\[userinfo@]host\[:port]\[/path]\[?query]\[#fragment]
 >
 > * **sheme**\
->   주로 프로토콜 사용 ex) http, https
+>   ex) http, https
 > * **userinfo**\
 >   ****URL에 사용자 정보 포함해서 인증\
 >   거의 사용하지 않음
@@ -123,6 +123,26 @@ OSI 7 계층 중  2, 3, 4, 7계층만 살펴보자.\
 > * **fragment**\
 >   http 내부 북마크 등에 사용\
 >   서버에 전송하는 정보 아님
+
+### Sheme VS Protocol
+
+예시를 들어보겠다.
+
+https://example.com 이란 URL이 있을 때 요청메시지를 보자
+
+HTTP request (snippet) starts with:
+
+```
+GET / HTTP/1.1
+Host: example.com
+
+...
+```
+
+* https would be the scheme
+* HTTP/1.1 would be the protocol
+
+https가 protocol이라고 오해하지 않도록 주의하자
 
 ## Stateless Protocol
 
