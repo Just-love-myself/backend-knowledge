@@ -1,5 +1,5 @@
 ---
-description: DTO가 무엇인지, 왜 필요한지에 대해서 알아보자
+description: DTO가 무엇인지, 등장한 배경에 대해서 알아보자
 ---
 
 # DTO
