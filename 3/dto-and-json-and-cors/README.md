@@ -14,7 +14,7 @@
 
 [dto.md](dto.md "mention")
 
-[undefined.md](undefined.md "mention")
+[serialization.md](serialization.md "mention")
 
 [jackson-objectmapper.md](jackson-objectmapper.md "mention")
 
