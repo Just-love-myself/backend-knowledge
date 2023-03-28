@@ -70,7 +70,7 @@ Layer 또는 Tier로 계층을 나누는 구조가 있다.
 
 예를 들어 사용자와 데이터베이스간의 데이터 요구 서비스에 미들웨어를 이용하는 것을 들 수 있다.&#x20;
 
-일반적으로는 **3층 구조**가 널리 쓰인다.
+전통적인 3계층 : [https://martinfowler.com/bliki/PresentationDomainDataLayering.html](https://martinfowler.com/bliki/PresentationDomainDataLayering.html)
 
 #### 3층 구조 (3-Tier)
 

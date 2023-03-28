@@ -33,3 +33,5 @@
 
 * [Layered Architecture](4/layered-architecture/README.md)
   * [Layered Architecture](4/layered-architecture/layered-architecture.md)
+  * [Data Access](4/layered-architecture/data-access.md)
+  * [Domain Model](4/layered-architecture/domain-model.md)
