@@ -24,7 +24,12 @@
 ## 3주차
 
 * [DTO & JSON & CORS](3/dto-and-json-and-cors/README.md)
-  * [DTO](3/dto-and-json-and-cors/dto.md)
-  * [직렬화(Serialization)](3/dto-and-json-and-cors/serialization.md)
-  * [Jackson ObjectMapper](3/dto-and-json-and-cors/jackson-objectmapper.md)
-  * [CORS](3/dto-and-json-and-cors/cors.md)
+  * [DTO](3/dto.md)
+  * [직렬화(Serialization)](3/undefined.md)
+  * [Jackson ObjectMapper](3/jackson-objectmapper.md)
+  * [CORS](3/cors.md)
+
+## 4주차
+
+* [Layered Architecture](4/layered-architecture/README.md)
+  * [Layered Architecture](4/layered-architecture/layered-architecture.md)

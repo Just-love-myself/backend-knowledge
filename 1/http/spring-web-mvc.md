@@ -63,7 +63,7 @@ WAS의 Web Container(**Servlet Container**)가 클라이언트로부터 http 요
 
 개발 할 때, 3가지 형태로 역할을 나누어 개발하는 방법론.
 
-비지니스 처리 로직(Model)과 사용자 인터페이스 요소(View)들을 <mark style="background-color:orange;">**분리시켜**</mark> \
+비즈니스 처리 로직(Model)과 사용자 인터페이스 요소(View)들을 <mark style="background-color:orange;">**분리시켜**</mark> \
 서로 영향없이 개발 하기 수월하다는 장점이 있다. -> <mark style="color:orange;">**관심사의 분리(Seperation of Concern)**</mark>
 
 * **Model**은 어플리케이션이 “**무엇**”을 할 것인지를 정의. 내부 비지니스 로직을 처리하기 위한 역할

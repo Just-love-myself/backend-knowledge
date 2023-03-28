@@ -12,10 +12,10 @@
 
 ## 목차
 
-[dto.md](dto.md "mention")
+[dto.md](../dto.md "mention")
 
-[serialization.md](serialization.md "mention")
+[undefined.md](../undefined.md "mention")
 
-[jackson-objectmapper.md](jackson-objectmapper.md "mention")
+[jackson-objectmapper.md](../jackson-objectmapper.md "mention")
 
-[cors.md](cors.md "mention")
+[cors.md](../cors.md "mention")
