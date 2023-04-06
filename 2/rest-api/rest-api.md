@@ -160,7 +160,7 @@ JSON은 하이버링크가 정의되어 있지 않고, Self-descriptive의 경�
 GET 메서드의 정의는 다음과 같다.\
 **target resource에 대한 현재의 선택된 representation 하나를 반환한다**
 
-****
+
 
 GET 요청을 서버에 보낸 상황을 보자
 
@@ -191,4 +191,3 @@ hello
 * representation은 사실 상 HTTP 메시지이다.
 * 성숙한 REST라면 representation에 하이퍼미디어 컨트롤이 포함되어야한다는 것
 
-****

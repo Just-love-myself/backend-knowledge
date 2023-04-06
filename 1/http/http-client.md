@@ -101,7 +101,7 @@ writer.write(message);
 writer.flush();
 ```
 
-> &#x20;** **<mark style="background-color:orange;">**내부적으로 버퍼가 있기 때문에 flush를 잊지 않아야 한다.**</mark>
+> &#x20;<mark style="background-color:orange;">**내부적으로 버퍼가 있기 때문에 flush를 잊지 않아야 한다.**</mark>
 
 ## 3. Response
 

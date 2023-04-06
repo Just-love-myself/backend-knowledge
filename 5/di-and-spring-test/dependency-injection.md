@@ -1,11 +1,5 @@
 # Dependency Injection
 
-* Spring AOP(Aspect Oriented Programming)
-* Dependency Injection
-* IoC(Inversion of Control)
-* Spring Bean
-* BeanFactory
-
 ## Factory
 
 객체를 직접 만들지 않고, 객체를 생성하는 책임만 가진 객체를 만들어서 쓴다(SRP).
@@ -115,6 +109,8 @@ Inversion Of Control : 제어의 역전이라고 부른다.
 
 IoC는 DI(Dependency Injection)과 밀접한 관련이 있다. DI는 IoC 원칙을 실현하기 위한 여러 디자인패턴 중 하나이다.
 
+참고 링크 : [https://steady-coding.tistory.com/458](https://steady-coding.tistory.com/458)
+
 ### 스프링 프레임워크
 
 > 스프링 컨테이너가 필요에 따라 개발자 대신 Bean들을 관리(제어)해주는 행위
@@ -124,6 +120,117 @@ IoC는 DI(Dependency Injection)과 밀접한 관련이 있다. DI는 IoC 원칙�
 하지만 Spring 에서는 xml파일 또는 어노테이션 방식으로 스프링 컨테이너에 Bean(객체)를 등록하기만 하면, 스프링 컨테이너에서 Bean의 생명주기(생성 -> 의존성 설정 -> 초기화 -> 소멸)를 전부 관리해준다.
 
 즉, **객체에 대한 제어권이 컨테이너로 역전**되기 때문에 제어의 역전이라고 하는 것이다.
+
+## 스프링 컨테이너
+
+개발자 대신 객체들을 관리해주기 때문에 **IoC 컨테이너**라고도 불리고, 의존관계 주입에 초점을 맞춰서 **DI 컨테이너**라고도 한다.&#x20;
+
+스프링에선 빈을 관리하는 컨테이너를 **스프링 컨테이너**라고 부른다.
+
+spring이 관리하는 빈을 콕 짚어서 **Spring Bean**이라고 얘기한다. (Java Bean != Spring Bean)
+
+스프링 컨테이너를 구현하는 방법은 두 가지가 있다. -> BeanFactory, ApplicationContext
+
+<figure><img src="../../.gitbook/assets/container.jpg" alt=""><figcaption><p>Spring Container</p></figcaption></figure>
+
+#### BeanFactory
+
+* 스프링 컨테이너의 최상위 인터페이스다. (최소한의 IoC 컨테이너)
+* 스프링 빈을 관리하고 조회하는 역할을 담당한다.
+* getBean()을 제공한다.
+* 지금까지 우리가 사용했던 대부분의 기능은 BeanFactory가 제공하는 기능이다.&#x20;
+
+1. BeanDefinition을 이용해서 Bean 정보를 설정한다.
+2. BeanFactory를 이용해서 해당 Bean을 Factory에 등록한다.
+3. getBean() 메서드를 통해 빈을 가져올 수 있다.
+
+```java
+@Test
+@DisplayName("Spring IoC Container를 통해 PostController 객체 얻기 테스트")
+void getPostController() {
+    ObjectMapper objectMapper = new ObjectMapper();
+
+    //BeanFactory 객체 생성
+    DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+
+    //빈 생성할 때, 생성자를 통해 객체 넘겨준다. (=DI)
+    ConstructorArgumentValues constructorArgs = new ConstructorArgumentValues();
+    constructorArgs.addIndexedArgumentValue(0, objectMapper);
+
+    //빈 멤버 필드 값 설정
+    MutablePropertyValues propertyValues = new MutablePropertyValues();
+    propertyValues.add("objectMapper", objectMapper);
+    
+    //BeanDefinition 객체 생성 -> Bean 정보 설정
+    GenericBeanDefinition beanDefinition = new GenericBeanDefinition();
+    beanDefinition.setConstructorArgumentValues(constructorArgs);
+    beanDefinition.setPropertyValues(propertyValues);
+    beanDefinition.setBeanClass(PostController.class);
+    
+    //beanFactory에 빈 등록
+    beanFactory.registerBeanDefinition("postController", beanDefinition);
+    
+    //getBean()으로 빈 불러오기
+    PostController postController = 
+        beanFactory.getBean("postController", PostController.class);
+}
+```
+
+#### ApplicationContext
+
+* BeanFactory 기능을 모두 상속받아서 제공한다.
+* 빈을 관리하고 검색하는 기능을 BeanFactory 가 제공해주는데, 둘의 차이는?
+* 애플리케이션을 개발할 때는 빈은 관리하고 조회하는 기능은 물론이고, 수많은 부가기능이 필요하다.
+* MessageSource 메시지 소스를 활용한 국제화 기능 -> 한국에서 들어오면 한국어로, 영어권에서 들어오면 영어로.
+* EnvironmentCapable 환경 변수 -> 로컬, 개발, 운영등을 구분해서 처리
+* ApplicationEventPublisher  애플리케이션 이벤트 -> 이벤트를 발행하고 구독하는 모델을 편리하게 지원
+* ResourceLoader  편리한 리소스 조회 -> 파일, 클래스패스, 외부 등에서 리소스를 편리하게 조회
+
+```java
+@Configuration
+public class DemoApplication {
+    public static void main(String[] args) {
+	ApplicationContext context = 
+		new AnnotationConfigApplicationContext(DemoApplication.class);
+		
+	System.out.println("-".repeat(80));
+		
+	PostController controller = 
+		context.getBean("postController", PostController.class);
+	System.out.println(controller);
+	
+	ObjectMapper objectMapper = 
+		context.getBean("objectMapper", ObjectMapper.class);
+	System.out.println(objectMapper);
+    }
+	
+    @Bean
+    public PostController postController() {
+ 	System.out.println("Create bean: postController");
+	return new PostController(objectMapper());
+    }
+	
+    @Bean
+    public ObjectMapper objectMapper() {
+	System.out.println("Create bean: objectMapper");
+	return new ObjectMapper();
+    }
+}
+```
+
+스프링 애플리케이션 대부분은 최소한의 IoC Container인 BeanFactory를 넘어서, **ApplicationContext**를 사용할 때가 많다.&#x20;
+
+예전에는 Bean에 대한 정보를 XML 파일로 써줬는데, 최근에는 Java의 Annotation으로 처리한다.&#x20;
+
+Bean은 Java Config에서 @Bean 애너테이션을 써서 정의하거나, 해당 클래스에 @Component 애너테이션을 붙여주고 Scan한다(@ComponentScan 사용)
+
+빈 수동 등록 -> @Configuration -> @Bean으로 등록
+
+빈 자동 등록 -> @Component (@Controller, @Service, @Repository는 모두 @Component다.)
+
+
+
+
 
 
 
