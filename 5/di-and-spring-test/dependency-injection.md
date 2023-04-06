@@ -116,7 +116,9 @@ Inversion Of Control : 제어의 역전이라고 부른다.
 
 IoC는 DI(Dependency Injection)과 밀접한 관련이 있다. DI는 IoC 원칙을 실현하기 위한 여러 디자인패턴 중 하나이다.
 
-참고 링크 : [https://steady-coding.tistory.com/458](https://steady-coding.tistory.com/458)
+참고 링크 : [IoC와 DI](https://steady-coding.tistory.com/458)
+
+참고 링크 : [팩토리 메서드, IoC](https://velog.io/@jakeseo\_me/%ED%86%A0%EB%B9%84%EC%9D%98-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%A0%95%EB%A6%AC-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-1.4-%EC%A0%9C%EC%96%B4%EC%9D%98-%EC%97%AD%EC%A0%84)
 
 ### 스프링 프레임워크
 
