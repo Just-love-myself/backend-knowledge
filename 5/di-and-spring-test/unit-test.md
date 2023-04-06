@@ -102,64 +102,67 @@ JUnit은 자동화된 테스트를 지원하는 도구. 이름에 Unit이 들어
 * 믿을 수 있는 부품이 있다면 어떻게 하면 되는가? -> 조합
 
 1. 맨 처음에는 부품이 있다고 가정하고 코드를 작성한다. (Top-Down 형식)
-
-```java
-public double sqrtIter(double guess, double x) {
-	if (goodEnough(guess, x)) {
-		return guess;
-	}
-	
-	return sqrtIter(improve(guess, x), x);
-}
-```
-
 2. 이후에 부품을 확실히 신뢰할 수 있도록 구현하면, 해당 조합은 저절로 신뢰할 수 있게 된다.\
-   (올바른 goodEnough와 improve만 주어진다면, 전체코드는 대부분의 경우엔 문제가 없을 것이다)
+   (올바른 goodEnough와 improve만 주어진다면, 전체 코드는 대부분의 경우엔 문제가 없을 것이다)
+
+@BeforeEach : 각 Test 전에 수행되는 것들
 
 ```java
-class NewtonMethodTest {
-	private NewtonMethod sut;  // System Under Test
-	
-	@BeforeEach
-	void setUp() {
-		sut = new NewtonMethod();
-	}
-	
-	@Test
-	void goodEnough() {
-		// 아래 둘은 너무 명확한 경우
-		assertThat(sut.goodEnough(2, 4)).isTrue();
-		assertThat(sut.goodEnough(1, 4)).isFalse();
-	
-		// 이 정도면 괜찮다 싶은 경우
-		assertThat(sut.goodEnough(1.999999, 4)).isTrue();
-	}
-	
-	@Test
-        void improve(){
-	        /*
-	        부품이 있다고 가정하고 코드를 작성하자
-	        improve()를 작성하기 전에, 믿을 만한 improve()가 있다고 작성하고
-	        아래 테스트들을 만족시켜야한다.
-	        그러고 나서 improve를 믿을 만한 부품으로 구현하면 됨
-	        */
-	
-	        //DecimalFormat -> 소수점 자리 정해줄 수 있다.
-	        DecimalFormat decimalFormat = new DecimalFormat("0.####");
-	        assertThat(decimalFormat.format(sut.improve(1, 2))).isEqualTo("1.5");
-	        assertThat(decimalFormat.format(sut.improve(1.5, 2))).isEqualTo("1.4167");
-	        assertThat(decimalFormat.format(sut.improve(1.4166, 2))).isEqualTo("1.4142");
-        }
+@BeforeEach     //각 테스트 전 수행되는 것들, setup 이름으로 하기도 함
+void setup(){
+    sut = new NewtonMethod();
 }
 ```
 
+테스트 코드를 작성할 때, 경우의 수가 많다면, 여러 메서드로 나눠주는 것이 좋다.
+
+* 테스트가 실패하면 어떤 경우로 실패한 건지 알아차리기 쉽다. (가독성 증가)
+* 협업할 때 누가 코드를 수정하다가 잘못 됐거나(요구사항 불만족), \
+  리팩터링 할 때 좋은 참고물이 될 수 있다.
+
+한 메서드에 모든 경우의 수가 있는 경우 (3가지 경우가 몰려있음)
+
+```java
+@Test
+void goodEnough() {
+    // 아래 둘은 너무 명확한 경우
+    assertThat(sut.goodEnough(2, 4)).isTrue();
+    assertThat(sut.goodEnough(1, 4)).isFalse();
+
+    // 이 정도면 괜찮다 싶은 경우
+    assertThat(sut.goodEnough(1.999999, 4)).isTrue();
+	
+    //guess가 음수인 경우에는 False
+    assertThat(sut.goodEnough(-1.999999, 4)).isFalse();
+}
 ```
-// Some code
+
+세 개의 메서드로 나눠주었다
+
+```java
+@Test
+@DisplayName("제곱근과 같은 값이면 true 반환")
+void goodEnoughCorrect(){
+    assertThat(sut.goodEnough(2, 4)).isTrue();
+    assertThat(sut.goodEnough(1, 4)).isFalse();
+}
+
+@Test
+@DisplayName("제곱근과 비슷한 값이면 true 반환")
+void goodEnoughNear(){
+    assertThat(sut.goodEnough(1.999999, 4)).isTrue();
+
+}
+
+@Test
+@DisplayName("guess가 음수면 False 반환")
+void goodEnoughNegative(){
+    assertThat(sut.goodEnough(-1.999999, 4)).isFalse();
+}
 ```
 
+### Test Pyramid
 
+<figure><img src="../../.gitbook/assets/testPyramid.png" alt=""><figcaption><p>Test Pyramid</p></figcaption></figure>
 
-
-
-
-
+앞으로 Spring과 Mockito 등을 적극적으로 쓰는 테스트 코드를 많이 작성할 거지만, 기본은 여기에 있다. 단순한 Unit Test가 제일 많아야 하고, 이를 통해 신뢰할 수 있는 토대를 구축해야 한다.
