@@ -92,6 +92,16 @@ JUnit을 이용하여 Unit Test를 해보자
 
 JUnit은 자동화된 테스트를 지원하는 도구. 이름에 Unit이 들어가지만 단위 테스트만 지원하는 건 아님. 통합 테스트, 심지어는 E2E 테스트를 작성하는데도 사용한다.
 
+#### E2E 테스트란? <a href="#829e" id="829e"></a>
+
+E2E(End-to-End) 테스트란 사용자 중심으로 처음부터 끝까지 어플리케이션 흐름을 테스트하는 소프트웨어 테스트 방법 중 하나다.&#x20;
+
+E2E 테스트의 목적은 실제 사용자 시나리오를 시뮬레이션하고 어플리케이션 구성 요소의 통합 및 데이터 무결성을 검증하는 것이다.
+
+딜리버스에서 E2E 테스트를 하는 이유는 FE(Front-end),BE(Back-end)에서 유닛 테스트(Unit Test)를 진행하고 있지만 최종 배포 전 어플리케이션의 주요 기능들이 문제없이 작동하는지 검증하기 위함이다.&#x20;
+
+만약에 E2E 테스트를 진행하지 않으면 어플리케이션 최종 테스트를 진행할 방법이 없으며, 어플리케이션 사용자가 어플리케이션에 대한 신뢰가 떨어지고 사용의 불편함을 느낄 수 있기 때문(품질 저하)이다.
+
 ### Unit Test 예제 (Newton's Method)
 
 [Example: Square Roots by Newton's Method](https://mitp-content-server.mit.edu/books/content/sectbyfn/books\_pres\_0/6515/sicp.zip/full-text/book/book-Z-H-10.html#%\_sec\_1.1.7)
