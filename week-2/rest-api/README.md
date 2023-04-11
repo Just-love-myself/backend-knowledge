@@ -16,5 +16,5 @@ description: REST API에 대해서 알아보자
 
 [collection-patterns.md](collection-patterns.md "mention")
 
-[spring-web-mvc.md](../../1/http/spring-web-mvc.md "mention")
+[spring-web-mvc.md](../../week-1/http/spring-web-mvc.md "mention")
 
