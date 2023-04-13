@@ -47,3 +47,7 @@
 * [Database](week-6/database/README.md)
   * [Database](week-6/database/database.md)
   * [Relational Model](week-6/database/relational-model.md)
+  * [Relational Algerbra](week-6/database/relational-algerbra.md)
+  * [Entity-Relationship-Model](week-6/database/entity-relationship-model.md)
+  * [JDBC](week-6/database/jdbc.md)
+  * [JDBC Template](week-6/database/jdbc-template.md)
