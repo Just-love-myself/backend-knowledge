@@ -51,3 +51,10 @@
   * [Entity-Relationship-Model](week-6/database/entity-relationship-model.md)
   * [JDBC](week-6/database/jdbc.md)
   * [JDBC Template](week-6/database/jdbc-template.md)
+
+## week 7
+
+* [JPA](week-7/jpa/README.md)
+  * [ORM](week-7/jpa/orm.md)
+  * [Hibernate](week-7/jpa/hibernate.md)
+  * [Embeddable](week-7/jpa/embeddable.md)
