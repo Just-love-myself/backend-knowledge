@@ -88,3 +88,5 @@ Entity-Relationship-Model (ERM)을 정리할 때도 잠깐 언급했었다.
 * OOP 세계와 관련: “An entity models a **business entity** or **multiple actions** within a single business process.”
 * JPA는 **Relationship Mapping**과 **Aggregate Mapping** 등을 지원하고, \
   이를 잘 활용함으로써 객체(Object)와 관계(Relational)를 적절히 조화시킬 수 있다.
+
+### Persistence Context (영속성 컨텍스트)
