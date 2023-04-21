@@ -63,8 +63,6 @@ RDBMS는 'sameness'라는 하나의 개념을 정확히 정의하는데, 바로 
 
 자바는 **그래프 형태**로 하나의 연결에서 다른 연결로 이동하며 탐색한다. 예를 들어, `user.getBillingDetails().getAccountNumber()`의 형식이다. 그러나 RDBMS에서는 일반적으로 쿼리 수를 최소화하고 `JOIN`을 통해 여러 엔티티를 로드하고 원하는 대상 엔티티를 선택(select)하는 방식으로 탐색한다.
 
-
-
 ## JPA (Jakarta Persistence API)
 
 * **Jakarta EE**의 관계형 데이터 관리 API.&#x20;
@@ -89,4 +87,28 @@ Entity-Relationship-Model (ERM)을 정리할 때도 잠깐 언급했었다.
 * JPA는 **Relationship Mapping**과 **Aggregate Mapping** 등을 지원하고, \
   이를 잘 활용함으로써 객체(Object)와 관계(Relational)를 적절히 조화시킬 수 있다.
 
-### Persistence Context (영속성 컨텍스트)
+### persistence.xml
+
+JPA 설정은 persistence-unit(영속성 유닛)라는 것부터 시작을 하는데 일반적으로 연결할 데이터 베이스당 하나의 영속성 유닛을 등록하게 된다.
+
+* jdbc.dirver : JDBC 드라이버
+* jdbc.user : 아이디
+* jdbc.password : 비밀번호
+* jdbc.url : DB 접속 URL
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+    <persistence-unit name="demo">
+	<class>com.example.demo.models.Person</class>
+	<properties>
+	    <property name="jakarta.persistence.jdbc.url"
+			value="jdbc:postgresql://localhost:5432/postgres"/>
+	    <property name="jakarta.persistence.jdbc.user"
+			value="postgres"/>
+	    <property name="jakarta.persistence.jdbc.password"
+			value="password"/>
+	</properties>
+    </persistence-unit>
+</persistence>
+```
