@@ -65,3 +65,4 @@
 * [DDD](week-8/ddd/README.md)
   * [DDD](week-8/ddd/ddd.md)
   * [Strategic Design](week-8/ddd/strategic-design.md)
+  * [Tactical Design](week-8/ddd/tactical-design.md)
