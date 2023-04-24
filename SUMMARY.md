@@ -58,3 +58,10 @@
   * [ORM](week-7/jpa/orm.md)
   * [Hibernate](week-7/jpa/hibernate.md)
   * [Embeddable](week-7/jpa/embeddable.md)
+  * [Relationship Mapping](week-7/jpa/relationship-mapping.md)
+
+## week 8
+
+* [DDD](week-8/ddd/README.md)
+  * [DDD](week-8/ddd/ddd.md)
+  * [Strategic Design](week-8/ddd/strategic-design.md)
