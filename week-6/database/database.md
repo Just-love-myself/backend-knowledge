@@ -31,7 +31,7 @@
 Relationship과 Relation은 완전히 다른 단어다.
 
 **Relationship**은 Entity간의 **관계**를 말하고, \
-**Relation**은 tuple(=record)의 집합 또는 T**able**이라고 이해하면 된다.
+**Relation**은 tuple(=record)의 집합 또는 **Table**이라고 이해하면 된다.
 
 ex) 한 회사원이 여러 프로젝트를 담당한다면 \
 \-> "**Relationship** exists between employee and each Project"라고 말할 수 있을 것.

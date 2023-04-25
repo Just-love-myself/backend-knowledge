@@ -13,9 +13,15 @@
 
 ## Aggregate Mapping
 
-아직 정리가 안 된 부분, DDD에서 Aggregate란 개념이 등장하는 것 같다.
+DDD에서 Aggregate란 개념이 등장하는 것 같다.
 
-일단 참고할 만한 링크를 첨부해두겠다.
+간단히 말하자면, 비즈니스의 기능이 이동, 운송, 배달 등이면 우린 자동차가 필요하다.&#x20;
+
+타이어, 엔진이 아닌 자동차가 말이다.
+
+여기서 자동차가 Aggregate이고 타이어, 엔진이 Entity나 VO가 된다.
+
+Aggregate를 통해&#x20;
 
 참고 링크 : [Aggregate](https://incheol-jung.gitbook.io/docs/study/ddd-start/3)
 

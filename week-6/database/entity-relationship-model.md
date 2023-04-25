@@ -8,6 +8,7 @@
 * ERD 등을 그릴 때 쓰이는 건 Entity Type이다(Class Diagram을 떠올려보자).
 * <mark style="color:red;">ERD에서 Entity는,  OOP의 Entity랑 다르다</mark>
   * 데이터 모델에서의 Entity는 행위가 없다. 그냥 데이터일 뿐이다.
+  * JPA에서 쓰이는 @Entity도 ERD에서의 Entity 의미와 같다.
   * "객체지향의 사실과 오해"
     * Entity : 객체 ex)Person(class) -> 직녀(entity, instance)\
       id라는 필드(identifier)가 있다면, 직녀의 age란 필드의 값이 아무리 바뀌어도 id덕분에 같은 직녀라고 한다. 객체는 **식별성, 연속성**을 가진다.
