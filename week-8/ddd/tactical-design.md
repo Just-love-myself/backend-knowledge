@@ -130,7 +130,7 @@ IDDD의 저자인 Vaughn Vernon은 4가지 경험 법칙을 제안한다:
 
 Repository는 Aggregate를 관리하는 Collection처럼 작동한다. 이는 두 가지 의미를 갖는데,
 
-1. 오직 Aggregate만 Repository를 갖는다.
+1. 오직 Aggregate만 Repository를 갖는다. (Aggregate 별로 하나의 Repository 사용)
 2. Repository는 영속화 방법 및 기술을 감춘다.
 
 Spring Data JPA는 이 둘을 만족시키기 위한 기능을 갖추고 있다.&#x20;
