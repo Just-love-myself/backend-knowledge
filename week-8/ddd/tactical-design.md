@@ -126,7 +126,34 @@ IDDD의 저자인 Vaughn Vernon은 4가지 경험 법칙을 제안한다:
 
 ### 트랜잭션적 일관성과 결과적 일관성
 
+## Repository
 
+Repository는 Aggregate를 관리하는 Collection처럼 작동한다. 이는 두 가지 의미를 갖는데,
+
+1. 오직 Aggregate만 Repository를 갖는다.
+2. Repository는 영속화 방법 및 기술을 감춘다.
+
+Spring Data JPA는 이 둘을 만족시키기 위한 기능을 갖추고 있다.&#x20;
+
+* Aggregate만 Repository를 갖도록 하위 Entity나 VO들에게도 상태 전파가 이루어져야한다.
+* 애그리거트는 관련된 모델을 하나로 묶은 것이기 때문에 애그리거트에 속한 객체들은 유사하거나 동일한 라이프 사이클을 갖는다
+* CascadeType.ALL + orphanRemoval = true로 설정한다.
+* Persistence Context를 통해 Collection처럼 쓸 수 있게한다.\
+  ex) entityManager.find()하면 항상 같은 객체를 반환해준다.
+
+정리해보자면,
+
+1. 적절한 Aggregate 경계를 찾는다.
+2. 책임 분배를 위해 적절히 Entity, VO로 구성
+3. Aggregate를 위한 Repository 생성
+
+이를 통해 여러 기술 문제와 무관한 비즈니스 도메인에 집중할 수 있게 된다.
+
+이렇게 비즈니스 도메인에 집중한 코드를 모아둔 곳을 Domain Layer라고 부르며, \
+Repository와 Aggregate를 사용하는 코드가 모인 곳을 Application Layer(여기선 애플리케이션의 기능, Use Case가 직접적으로 드러나게 된다), \
+Web 등 구체적인 기술로 사용자와 소통하는 코드가 모인 곳을 UI Layer라고 부른다..
+
+이게 바로 Layered Architecture가 DDD와 함께 다뤄지는 이유다.
 
 ## Aggregate 경계 찾는 법 관련해서 추가로 참고할만한 부분
 
