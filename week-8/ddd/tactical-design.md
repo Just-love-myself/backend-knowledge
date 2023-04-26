@@ -139,7 +139,7 @@ Spring Data JPA는 이 둘을 만족시키기 위한 기능을 갖추고 있다.
 * 애그리거트는 관련된 모델을 하나로 묶은 것이기 때문에 애그리거트에 속한 객체들은 유사하거나 동일한 라이프 사이클을 갖는다
 * CascadeType.ALL + orphanRemoval = true로 설정한다.
 * Persistence Context를 통해 Collection처럼 쓸 수 있게한다.\
-  ex) entityManager.find()하면 항상 같은 객체를 반환해준다.
+  ex) find()하면 항상 같은 객체를 반환해준다.
 
 정리해보자면,
 
