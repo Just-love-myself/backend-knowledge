@@ -66,3 +66,9 @@
   * [DDD](week-8/ddd/ddd.md)
   * [Strategic Design](week-8/ddd/strategic-design.md)
   * [Tactical Design](week-8/ddd/tactical-design.md)
+
+## week 9
+
+* [Hexagonal Architecture](week-9/hexagonal-architecture/README.md)
+  * [SOLID](week-9/hexagonal-architecture/solid.md)
+  * [hexagonal architecture](week-9/hexagonal-architecture/hexagonal-architecture.md)
