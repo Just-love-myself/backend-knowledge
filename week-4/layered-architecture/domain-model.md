@@ -68,7 +68,7 @@ Long amount = account.getAmount();
 account.setAmount(amount + 10_000);
 ```
 
-* 행위가 있다면? (내가 알게 뭐야 = 알아서 해 = 책임위임)
+* 행위가 있다면? (내가 알게 뭐야 = 알아서 해줘 = 책임위임)
 * 도메인 객체에게 요청하는 것&#x20;
 
 ```java
