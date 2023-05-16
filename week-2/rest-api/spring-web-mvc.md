@@ -140,7 +140,21 @@ value 설정을 통하여 어떤 예외를 잡을지 설정할 수 있다.&#x20;
 
 응답 상태코드를 정해주는 애노테이션이다.
 
+* **@RequestAttribute**
 
+@RequestAttribute는 request 객체의 attribute를 가져오는 어노테이션이다.
+
+```java
+@GetMapping
+public String sample(@RequestAttribute String userId){
+    System.out.println(id);
+}
+```
+
+인증/인가에서 HandlerIntercepter의 preHandle() 메서드로 HttpServletRequest 객체 (request 객체)에 속성을 지정해준 뒤,\
+controller 쪽에서 요청받은 request 객체의 속성으로 인가를 할지 말지 결정할 수 있다.
+
+ex) 글 삭제는 자신이 썼던 글만 삭제할 수 있다. -> request 객체의 userId를 보고 결정한다.
 
 ## Path Parameter와 Query String
 
