@@ -153,6 +153,8 @@ JSON은 하이버링크가 정의되어 있지 않고, Self-descriptive의 경�
 
 문법은 해석이 가능하지만, 의미를 해석하려면 별도로 문서가(API 문서 등) 필요합니다
 
+[API, HTTP API, REST API](https://bentist.tistory.com/37) -> HTTP API와 REST API의 차이점
+
 ## **Resources** 와 Representations
 
 **HTTP에서의 representation**
